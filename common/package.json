@@ -9,6 +9,6 @@
     "lint:tsc": "tsc --pretty --noEmit",
     "format": "run-s format:eslint format:prettier",
     "format:eslint": "pnpm lint:eslint --fix",
-    "format:prettier": "pnpm lint:prettier --write",
+    "format:prettier": "pnpm lint:prettier --write"
   }
 }

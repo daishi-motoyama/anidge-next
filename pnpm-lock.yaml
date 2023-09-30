@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@anidge/common':
+        specifier: '*'
+        version: link:common
       '@daishi-motoyama/base-prettier-config':
         specifier: 1.0.0
         version: 1.0.0(prettier@3.0.3)
@@ -26,6 +29,9 @@ importers:
       '@mantine/hooks':
         specifier: ^7.1.0
         version: 7.1.0(react@18.2.0)
+      '@tabler/icons-react':
+        specifier: ^2.34.0
+        version: 2.34.0(react@18.2.0)
       next:
         specifier: ^13.5.3
         version: 13.5.3(react-dom@18.2.0)(react@18.2.0)
@@ -60,6 +66,10 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
+
+  admin: {}
+
+  common: {}
 
   provider: {}
 
@@ -493,6 +503,20 @@ packages:
     dependencies:
       defer-to-connect: 2.0.1
     dev: true
+
+  /@tabler/icons-react@2.34.0(react@18.2.0):
+    resolution: {integrity: sha512-HNNTdwwAW8IwUxLPY2HWFw+d7nPVByieamIx90qM1+Rq8UfvLjwsBFNcUKaJcfRFIAa80o4g6ZGy/NMD/Zw73A==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@tabler/icons': 2.34.0
+      prop-types: 15.8.1
+      react: 18.2.0
+    dev: false
+
+  /@tabler/icons@2.34.0:
+    resolution: {integrity: sha512-65GsJsT4ZBETWcdrNxbsjsbRoZvbVk3CcU2SafaElrzP1wpOeuAn9aELVEbxhdyZyP9dg2SCfgH6iAArJgp7lw==}
+    dev: false
 
   /@types/debug@4.1.9:
     resolution: {integrity: sha512-8Hz50m2eoS56ldRlepxSBa6PWEVCtzUo/92HgLc2qTMnotJNIm7xP+UZhyWoYsyOdd5dxZ+NZLb24rsKyFs2ow==}
