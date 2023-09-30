@@ -1,0 +1,14 @@
+{
+  "name": "@anidge/common",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "run-s lint:* -c",
+    "lint:eslint": "eslint --ext .js,.ts,.tsx --max-warnings 0 .",
+    "lint:prettier": "prettier --check .",
+    "lint:tsc": "tsc --pretty --noEmit",
+    "format": "run-s format:eslint format:prettier",
+    "format:eslint": "pnpm lint:eslint --fix",
+    "format:prettier": "pnpm lint:prettier --write",
+  }
+}
