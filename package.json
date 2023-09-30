@@ -23,6 +23,7 @@
     "postcss-preset-mantine": "^1.7.0",
     "postcss-simple-vars": "^7.0.1",
     "scaffdog": "^3.0.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "prisma": "^5.3.1"
   }
 }
