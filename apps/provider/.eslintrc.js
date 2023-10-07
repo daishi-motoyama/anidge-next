@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["@daishi-motoyama/nextjs-eslint-config"],
+  extends: ["@daishi-motoyama/next"],
   parserOptions: {
     project: "tsconfig.json",
   },

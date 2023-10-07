@@ -1,21 +1,21 @@
-version: '3.8'
+version: "3.8"
 services:
-    mysql:
-        image: 'mysql/mysql-server:8.0.32'
-        environment:
-          - MYSQL_DB=${MYSQL_DATABASE}
-          - MYSQL_USER=${MYSQL_USER}
-          - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-          - MYSQL_HOST=${MYSQL_HOST}
-          - TZ=${MYSQL_TZ}
-        volumes:
-            - 'db:/var/lib/mysql'
-        ports:
-            - '${MYSQL_PORT}:3306'
-        healthcheck:
-            test: 
-              ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-proot']
-            retries: 3
-            timeout: 5s
+  mysql:
+    image: "mysql/mysql-server:8.0.32"
+    environment:
+      - MYSQL_DB=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - TZ=${MYSQL_TZ}
+    volumes:
+      - "db:/var/lib/mysql"
+    ports:
+      - "${MYSQL_PORT}:3306"
+    healthcheck:
+      test:
+        ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      retries: 3
+      timeout: 5s
 volumes:
-    db:
+  mysql:

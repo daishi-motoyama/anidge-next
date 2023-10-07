@@ -1,7 +1,0 @@
-.next
-public/*
-node_modules
-
-tsconfig.json
-.eslintrc.js
-.prettierrc.js
