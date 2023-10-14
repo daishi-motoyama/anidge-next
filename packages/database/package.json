@@ -1,0 +1,41 @@
+{
+  "name": "database",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "run-s lint:* -c",
+    "lint:eslint": "eslint --ext .js,.ts --max-warnings 0 .",
+    "lint:prettier": "prettier --check .",
+    "lint:tsc": "tsc --pretty --noEmit",
+    "format": "run-s format:eslint format:prettier",
+    "format:eslint": "pnpm lint:eslint --fix",
+    "format:prettier": "pnpm lint:prettier --write",
+    "prisma:studio": "prisma studio",
+    "prisma:push": "prisma db push",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:generate": "prisma generate",
+    "prisma:seed": "prisma db seed",
+    "prisma:reset": "prisma migrate reset --force"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed/index.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.3.1"
+  },
+  "devDependencies": {
+    "@daishi-motoyama/eslint-config-node": "1.0.0",
+    "@daishi-motoyama/tsconfig-node": "1.0.0",
+    "prisma": "^5.3.1",
+    "tsup": "^7.2.0",
+    "tsx": "^3.13.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "@daishi-motoyama/tsconfig-node/tsconfig",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["src/*"],
+    },
+    "incremental": false
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "tsup.config.ts"],
+  "exclude": ["node_modules"]
+}

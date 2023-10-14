@@ -9,7 +9,7 @@ services:
       - MYSQL_HOST=${MYSQL_HOST}
       - TZ=${MYSQL_TZ}
     volumes:
-      - "db:/var/lib/mysql"
+      - "mysql:/var/lib/mysql"
     ports:
       - "${MYSQL_PORT}:3306"
     healthcheck:
@@ -17,5 +17,79 @@ services:
         ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
       retries: 3
       timeout: 5s
+  database:
+    image: database
+    env_file: ./packages/database/.env
+    build:
+      context: .
+      dockerfile: ./packages/database/Dockerfile
+    tty: true
+    volumes:
+      - ./packages/database:/app/packages/database:cached
+      - root_node_modules:/app/node_modules
+      - database_node_modules:/app/packages/database/node_modules
+    ports:
+      - "5555:5555"
+    depends_on:
+      - mysql
+    networks:
+      - anidge
+  user:
+    image: user
+    build:
+      context: .
+      dockerfile: ./apps/user/Dockerfile
+    tty: true
+    volumes:
+      - ./apps/user:/app/apps/user:cached
+      - root_node_modules:/app/node_modules
+      - apps_node_modules:/app/apps/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+      - database
+    networks:
+      - anidge
+  provider:
+    image: provider
+    build:
+      context: .
+      dockerfile: ./apps/provider/Dockerfile
+    tty: true
+    volumes:
+      - ./apps/provider:/app/apps/provider:cached
+      - root_node_modules:/app/node_modules
+      - apps_node_modules:/app/apps/node_modules
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mysql
+      - database
+    networks:
+      - anidge
+  admin:
+    image: admin
+    build:
+      context: .
+      dockerfile: ./apps/admin/Dockerfile
+    tty: true
+    volumes:
+      - ./apps/admin:/app/apps/admin:cached
+      - root_node_modules:/app/node_modules
+      - apps_node_modules:/app/apps/node_modules
+    ports:
+      - "3002:3002"
+    depends_on:
+      - mysql
+      - database
+    networks:
+      - anidge
+networks:
+  anidge:
+    driver: bridge
 volumes:
   mysql:
+  root_node_modules:
+  apps_node_modules:
+  database_node_modules:

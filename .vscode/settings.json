@@ -10,7 +10,9 @@
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.tsdk": "node_modules/typescript/lib",
   "eslint.workingDirectories": [
-    { "directory": "frontend", "changeProcessCWD": true },
-    { "directory": "backend", "changeProcessCWD": true }
+    { "directory": "admin", "changeProcessCWD": true },
+    { "directory": "provider", "changeProcessCWD": true },
+    { "directory": "user", "changeProcessCWD": true },
+    { "directory": "database", "changeProcessCWD": true }
   ]
 }

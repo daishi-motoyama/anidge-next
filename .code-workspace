@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "name": "admin",
+      "path": "apps/admin"
+    },
+    {
+      "name": "provider",
+      "path": "apps/provider"
+    },
+    {
+      "name": "user",
+      "path": "apps/user"
+    },
+    {
+      "name": "root",
+      "path": "."
+    }
+  ]
+}
