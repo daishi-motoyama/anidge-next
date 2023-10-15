@@ -18,7 +18,7 @@ FROM base AS installer
 WORKDIR /app
 
 # First install the dependencies (as they change less often)
-COPY --from=builder /app/out/json/ /app/out/pnpm-lock.yaml /app/pnpm-lock.yaml /app/out/pnpm-workspace.yaml /app/pnpm-workspace.yaml /app/.npmrc /app/
+COPY --from=builder /app/out/json/ /app/out/pnpm-lock.yaml /app/pnpm-lock.yaml /app/out/pnpm-workspace.yaml /app/pnpm-workspace.yaml /app/.vscode /app/docker-compose.yaml /app/.npmrc /app/
 
 RUN pnpm install
 
