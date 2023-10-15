@@ -1,5 +1,5 @@
 {
-  "name": "Node.js Dev Container",
+  "name": "Database Dev Container",
   "dockerComposeFile": "../../docker-compose.yaml",
   "service": "database",
   "workspaceFolder": "/app/packages/database",
@@ -21,8 +21,7 @@
         "rangav.vscode-thunder-client",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "Prisma.prisma",
-        "figma.figma-vscode-extension"
+        "Prisma.prisma"
       ]
     }
   }
