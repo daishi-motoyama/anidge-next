@@ -3,10 +3,9 @@ services:
   mysql:
     image: "mysql/mysql-server:8.0.32"
     environment:
-      - MYSQL_DB=${MYSQL_DATABASE}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_HOST=%
       - TZ=${MYSQL_TZ}
     volumes:
       - "mysql:/var/lib/mysql"
@@ -32,8 +31,6 @@ services:
       - "5555:5555"
     depends_on:
       - mysql
-    networks:
-      - anidge
   user:
     image: user
     build:
@@ -50,8 +47,6 @@ services:
     depends_on:
       - mysql
       - database
-    networks:
-      - anidge
   provider:
     image: provider
     build:
@@ -68,8 +63,6 @@ services:
     depends_on:
       - mysql
       - database
-    networks:
-      - anidge
   admin:
     image: admin
     build:
@@ -86,11 +79,6 @@ services:
     depends_on:
       - mysql
       - database
-    networks:
-      - anidge
-networks:
-  anidge:
-    driver: bridge
 volumes:
   mysql:
   root_node_modules:
