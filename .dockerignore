@@ -1,7 +1,7 @@
 **/node_modules
-# .vscode
+.vscode
 .gitignore
-# docker-compose.yaml
+docker-compose.yaml
 **/README.md
 **/Dockerfile
 **/dist
