@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
     "lint": "run-s lint:* -c",
@@ -14,5 +14,8 @@
     "format:eslint": "pnpm lint:eslint --fix",
     "format:prettier": "pnpm lint:prettier --write",
     "generate:route": "scaffdog generate route"
+  },
+  "dependencies": {
+    "database": "workspace:*"
   }
 }
