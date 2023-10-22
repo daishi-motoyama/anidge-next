@@ -16,9 +16,26 @@
   "prisma": {
     "schema": "packages/database/prisma/schema.prisma"
   },
+  "dependencies": {
+    "@mantine/core": "^7.1.5",
+    "@mantine/form": "^7.1.5",
+    "@mantine/hooks": "^7.1.5",
+    "@tabler/icons-react": "^2.34.0",
+    "next": "^13.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
     "@daishi-motoyama/prettier-config-base": "1.0.0",
+    "@daishi-motoyama/tsconfig-next": "1.0.1",
+    "@daishi-motoyama/eslint-config-next": "1.0.0",
+    "@types/react": "^18.2.23",
     "@types/node": "^20.7.2",
+    "postcss": "^8.4.31",
+    "postcss-preset-mantine": "^1.9.0",
+    "postcss-simple-vars": "^7.0.1",
+    "scaffdog": "^3.0.0",
+    "pathpida": "^0.22.0",
     "npm-run-all": "^4.1.5",
     "turbo": "^1.10.15",
     "typescript": "^5.2.2"
