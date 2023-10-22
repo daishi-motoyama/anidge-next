@@ -14,5 +14,8 @@
     "format:eslint": "pnpm lint:eslint --fix",
     "format:prettier": "pnpm lint:prettier --write",
     "generate:route": "scaffdog generate route"
+  },
+  "dependencies": {
+    "database": "workspace:*"
   }
 }
