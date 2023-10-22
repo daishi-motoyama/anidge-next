@@ -1,0 +1,38 @@
+{
+    "name": "User Dev Container",
+    "dockerComposeFile": "../../docker-compose.yaml",
+    "service": "provider",
+    "workspaceFolder": "/app/apps/provider",
+    "postCreateCommand": "apk update && apk add git",
+    "customizations": {
+        "vscode": {
+            "settings": {
+            "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+            "editor.formatOnPaste": true,
+            "editor.formatOnSave": true,
+            "editor.formatOnType": true,
+            "editor.quickSuggestions": { "strings": true },
+            "files.encoding": "utf8",
+            "files.eol": "\n",
+            "typescript.preferences.importModuleSpecifier": "non-relative",
+            "editor.tabSize": 2,
+            "editor.renderWhitespace": "all",
+            "files.autoSave": "onFocusChange",
+            "javascript.preferences.importModuleSpecifier": "non-relative",
+            "editor.formatOnSaveMode": "modifications",
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "editor.codeActionsOnSave": {
+                "source.fixAll.eslint": true
+            },
+            "typescript.tsdk": "../../../node_modules/typescript/lib"
+            },
+            "extensions": [
+            "rangav.vscode-thunder-client",
+            "dbaeumer.vscode-eslint",
+            "esbenp.prettier-vscode",
+            "Prisma.prisma",
+            "figma.figma-vscode-extension"
+            ]
+        }
+    }
+}
