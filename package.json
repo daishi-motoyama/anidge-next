@@ -11,7 +11,9 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "generate": "turbo run prisma:generate"
+    "generate": "turbo run prisma:generate",
+    "lint": "run-s lint:* -c",
+    "format": "run-s format:*"
   },
   "prisma": {
     "schema": "packages/database/prisma/schema.prisma"
